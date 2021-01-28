@@ -4,43 +4,43 @@ hypothese('La angine') :- angine,!.
 hypothese('Le rhume') :- rhume,!.
 hypothese(inconnue) :- annuler.
 
-covid :- verifier(fievre),
-         verifier(toux),
-         verifier('des difficultés respiratoires'),
-         verifier('la fatigue'),
-         verifier('perdu d\'odorat'),
-         verifier('perdu du gout'),
-         verifier('congestion nasale'),
-         verifier('mal de gorge'),
-         verifier(diarrhee),
-         verifier('maux de tête'),
-         verifier('douleurs musculaires').
+covid :- verifier(fievre,'q1'),
+         verifier(toux,'q2'),
+         verifier('des difficultés respiratoires','q6'),
+         verifier('la fatigue','q4'),
+         verifier('perdu d\'odorat','q1'),
+         verifier('perdu du gout','q1'),
+         verifier('congestion nasale','q1'),
+         verifier('mal de gorge','q1'),
+         verifier(diarrhee,'q5'),
+         verifier('maux de tête','q3'),
+         verifier('douleurs musculaires','q7').
                 
 
-covid :- verifier(fievre),
-         verifier(toux),
-         verifier('des difficultés respiratoires'),
-         verifier('la fatigue'),
-         verifier('perdu d\'odorat'),
-         verifier('perdu du gout').
+covid :- verifier(fievre,'q1'),
+         verifier(toux,'q2'),
+         verifier('des difficultés respiratoires','q6'),
+         verifier('la fatigue','q4'),
+         verifier('perdu d\'odorat','q1'),
+         verifier('perdu du gout','q1').
 
-covid :- verifier('perdu d\'odorat'),
-         verifier('perdu du gout').
+covid :- verifier('perdu d\'odorat' , 'q1'),
+         verifier('perdu du gout','q1').
 
-grippe :- verifier(fievre),
-          verifier(toux),
-          verifier('congestion nasale'),
-          verifier('mal de gorge'),
-          verifier('des difficultés respiratoires'),
-          verifier('maux de tête'),
-          verifier('douleurs musculaires').
+grippe :- verifier(fievre,'q1'),
+          verifier(toux , 'q2'),
+          verifier('congestion nasale' , 'q1'),
+          verifier('mal de gorge' , 'q1'),
+          verifier('des difficultés respiratoires' , 'q6'),
+          verifier('maux de tête' , 'q3'),
+          verifier('douleurs musculaires', 'q7').
 
-angine :- verifier(fievre),
-          verifier('mal de gorge'),
-          verifier('maux de tête'),
-          verifier('amygdales rouges').
+angine :- verifier(fievre , 'q1'),
+          verifier('mal de gorge' , 'q1'),
+          verifier('maux de tête' , 'q3'),
+          verifier('amygdales rouges' , 'q8').
 
-rhume :- verifier(fievre),
-         verifier(toux),
-         verifier('congestion nasale'),
-         verifier('mal de gorge').
+rhume :- verifier(fievre , 'q1'),
+         verifier(toux , 'q2'),
+         verifier('congestion nasale', 'q1'),
+         verifier('mal de gorge' , 'q1').

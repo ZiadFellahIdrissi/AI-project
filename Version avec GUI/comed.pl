@@ -12,6 +12,17 @@ resource('La COVID-19', image, image('covid.jpg')).
 resource('La grippe', image, image('grippe.jpg')).
 resource('La angine', image, image('angine.jpg')).
 resource('Le rhume', image, image('rhume.jpg')).
+resource('q1', image, image('fievre.jpg')).
+resource('q2', image, image('taux.jpg')).
+resource('q1', image, image('fievre.jpg')).
+resource('q3', image, image('maux de tete.jpg')).
+resource('q4', image, image('fatigue.jpg')).
+resource('q5', image, image('diarrhee.jpg')).
+resource('q6', image, image('difficultes respiratoires.jpg')).
+resource('q7', image, image('douleurs musculaires.jpg')).
+resource('q8', image, image('red tonsils.jpg')).
+
+
 
 affich-image(Affichage, Imagen) :- new(Figure, figure),
                                      new(Bitmap, bitmap(resource(Imagen),@on)),
@@ -26,6 +37,14 @@ nouv_imagen(Fenetre, Imagen) :-new(Figure, figure),
                                 send(Figure, display, Bitmap),
                                 send(Figure, status, 1),
                                 send(Fenetre, display,Figure,point(0,0)).
+
+imagen_quest(Fenetre, Imagen) :-new(Figure, figure),
+                              new(Bitmap, bitmap(resource(Imagen),@on)),
+                              send(Bitmap, name, 1),
+                              send(Figure, display, Bitmap),
+                              send(Figure, status, 1),
+                              send(Fenetre, display,Figure,point(500,60)).
+
 
 boutons:-free(@maladie),
         free(@quitter),
@@ -47,9 +66,10 @@ boutons:-free(@maladie),
         send(@main, display, @quitter, point(390, 620)),
         annuler.
 
-demander(Symptome):-new(Di,dialog('Questions:')),
+demander(Symptome,Img):-new(Di,dialog('Questions:')),
                     new(L2,label(texto,'Repondez aux Questions')),
                     new(La,label(prob,Symptome)),
+                    imagen_quest(Di,Img),
                     new(B1,button('OUI',and(message(Di,return,oui)))),
                     new(B2,button('NO',and(message(Di,return,non)))),
                     send(Di, gap, size(25,25)),
@@ -87,7 +107,7 @@ effacer:- send(@maladie, selection('')).
 
 :-creer_interface.
 
-verifier(Symptome) :- ( yes(Symptome) -> true ; (no(Symptome) -> fail ; demander(Symptome)) ).
+verifier(Symptome,Img) :- ( yes(Symptome) -> true ; (no(Symptome) -> fail ; demander(Symptome,Img)) ).
 
 :- dynamic yes/1, no/1.
 
