@@ -6,7 +6,7 @@ hypothese('le coronavirus') :- covid.
 hypothese('la grippe') :- grippe.
 hypothese('la angine') :- angine.
 hypothese('le rhume') :- rhume.
-hypothese(inconnue) :- write("Vous êtes malade, mais on a pas pu vous diagnoster.").
+hypothese(inconnue) :- annuler.
 
 covid :- verifier(fievre),
 		 verifier(toux),
