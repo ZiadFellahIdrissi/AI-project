@@ -1,5 +1,5 @@
-:- use_module(library(pce)).
 :- include('bf.pl').
+:- use_module(library(pce)).
 :- pce_image_directory('./images').
 :- use_module(library(pce_style_item)).
 :- dynamic color/2.
