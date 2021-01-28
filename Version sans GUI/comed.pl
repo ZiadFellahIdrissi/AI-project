@@ -1,6 +1,4 @@
-%:- use_module(library(pce)).
-
-comed :- hypothese(Maladie), write("Votre maladie est "), write(Maladie), write("."), annuler.
+comed :- hypothese(Maladie), annuler.
 
 hypothese('le coronavirus') :- covid.
 hypothese('la grippe') :- grippe.
@@ -19,8 +17,8 @@ covid :- verifier(fievre),
 		 verifier('diarrhée'),
 		 verifier('maux de tête'),
 		 verifier('douleurs musculaires'),
-		 writeln("Vos symptômes nous dites que vous avez la COVID-19."),
-		 writeln("On vous conseille de visiter votre institut médicale locale le plutôt possible.").
+		 writeln("Vos symptomes nous dites que vous avez la COVID-19."),
+		 writeln("On vous conseille de visiter votre institut medicale locale le plutot possible.").
 covid :- verifier(fievre),
 		 verifier(toux),
 		 verifier('des difficultés respiratoires'),
@@ -29,7 +27,7 @@ covid :- verifier(fievre),
 		 verifier('perdu du gout'),
 		 writeln("Il est forte probable que vous avez la COVID-19."),
 		 writeln("On vous conseille de vous vous confinez chez vous pendant 14 jours,"),
-		 writeln("et prendre des medicaments.").
+		 writeln("et prendre des medicaments contre la COVID-19.").
 covid :- verifier(fievre),
 		 verifier('perdu d\'odorat'),
 		 verifier('perdu du gout'),
@@ -40,32 +38,35 @@ grippe :- verifier(fievre),
 		  verifier(toux),
 		  verifier('congestion nasale'),
 		  verifier('mal de gorge'),
-		  verifier('des difficultés respiratoires'),
+		  verifier('des difficultes respiratoires'),
 		  verifier('maux de tête'),
 		  verifier('douleurs musculaires'),
+		  writeln("Vous avez la grippe."),
 		  writeln("On vous conseille de vous vous reposez,"),
 		  writeln("bien buvez de l'eau,"),
-		  writeln("prenez un médicament contre la fièvre (nous vous recommandons le Paracétamol),"),
-		  writeln("vous vous lavez les mains régulièrement et ne prenez pas d'antibiotiques.").
+		  writeln("prenez un medicament contre la fievre (nous vous recommandons le Paracetamol),"),
+		  writeln("vous vous lavez les mains regulièrement et ne prenez pas d'antibiotiques.").
 angine :- verifier(fievre),
 		  verifier('mal de gorge'),
-		  verifier('maux de tête'),
+		  verifier('maux de tete'),
 		  verifier('amygdales rouges'),
+		  writeln("Vous avez l'angine."),
 		  writeln("On vous conseille que vous consommez de la vitamine C,"),
 		  writeln("buvez beaucoup d'eau"),
 		  writeln("evitez les climatiseurs et radiateurs trop chauds,"),
-		  writeln("arrêtez de fumer si vous êtes fumeux,"),
+		  writeln("arretez de fumer si vous etes fumeux,"),
 		  writeln("mangez du miel et dormez suffisament.").
 rhume :- verifier(fievre),
 		 verifier(toux),
 		 verifier('congestion nasale'),
 		 verifier('mal de gorge'),
-		 writeln("On vous conseille que vous utiliez du sérum physiologique pour laver le nez,"),
+		 writeln("Vous avez le rhume."),
+		 writeln("On vous conseille que vous utiliez du serum physiologique pour laver le nez,"),
 		 writeln("mangez du miel,"),
-		 writeln("stoppez l’écoulement du nez avec l’homéopathie"),
-		 writeln("apaisez les irritations nasales avec une pommade à base de vaseline,"),
-		 writeln("désinfecter le nez avec de gouttes nasales antiseptiques,"),
-		 writeln("prenez un médicament contre la fièvre (nous vous recommandons le Paracétamol).").
+		 writeln("stoppez l'ecoulement du nez avec l'homeopathie,"),
+		 writeln("apaisez les irritations nasales avec une pommade a base de vaseline,"),
+		 writeln("desinfectez le nez avec de gouttes nasales antiseptiques,"),
+		 writeln("prenez un medicament contre la fievre (nous vous recommandons le Paracetamol).").
 
 verifier(Symptome) :- ( yes(Symptome) -> true ; (no(Symptome) -> fail ; demander(Symptome)) ).
 
