@@ -13,7 +13,7 @@ resource('La grippe', image, image('grippe.jpg')).
 resource('La angine', image, image('angine.jpg')).
 resource('Le rhume', image, image('rhume.jpg')).
 resource('q1', image, image('fievre.jpg')).
-resource('q2', image, image('taux.jpg')).
+resource('q2', image, image('toux.jpg')).
 resource('q1', image, image('fievre.jpg')).
 resource('q3', image, image('maux de tete.jpg')).
 resource('q4', image, image('fatigue.jpg')).
