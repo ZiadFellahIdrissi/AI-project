@@ -21,6 +21,8 @@ resource('q5', image, image('diarrhee.jpg')).
 resource('q6', image, image('difficultes respiratoires.jpg')).
 resource('q7', image, image('douleurs musculaires.jpg')).
 resource('q8', image, image('red tonsils.jpg')).
+resource('q9', image, image('perdu d odorat.jpg')).
+resource('q10', image, image('nasal congestion.jpg')).
 
 
 
@@ -86,7 +88,7 @@ resultat(Msg) :- new(@conseil_g, dialog('Conseils pour votre maladie')),
                 nouv_imagen(@conseil_g, Msg),
                 send(@conseil_g, open_centered).
 
-interface_principal:-new(@main,dialog('CoMed: Consultation médicale')),
+interface_principal:-new(@main,dialog('CoMed: Consultation medicale')),
                     new(@quitter,button('QUITTER',and(message(@main,destroy),message(@main,free)))),
                     new(@debut, button('COMMENCER LE TEST',message(@prolog, boutons))),
                     nouv_imagen(@main, img_principal),
@@ -94,7 +96,7 @@ interface_principal:-new(@main,dialog('CoMed: Consultation médicale')),
                     send(@main, append(@quitter)),
                     send(@main, open_centered).
 
-creer_interface :- new(@interface,dialog('CoMed: Consultation médicale')),
+creer_interface :- new(@interface,dialog('CoMed: Consultation medicale')),
                     affich-image(@interface, inter),
                     new(BoutonComencer,button('COMMENCER',and(message(@prolog,interface_principal) ,
                     and(message(@interface,destroy),message(@interface,free)) ))),
