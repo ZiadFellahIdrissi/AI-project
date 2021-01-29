@@ -4,43 +4,43 @@ hypothese('La angine') :- angine,!.
 hypothese('Le rhume') :- rhume,!.
 hypothese(inconnue) :- annuler.
 
-covid :- verifier(fievre,'q1'),
-         verifier(toux,'q2'),
-         verifier('des difficultés respiratoires','q6'),
-         verifier('la fatigue','q4'),
-         verifier('perdu d\'odorat','q9'),
-         verifier('perdu du gout','q1'),
-         verifier('congestion nasale','q10'),
-         verifier('mal de gorge','q1'),
-         verifier(diarrhee,'q5'),
-         verifier('maux de tête','q3'),
-         verifier('douleurs musculaires','q7').
+covid :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius?','q1'),
+         verifier('Est ce que vous toussez?','q2'),
+         verifier('Avez vous des difficultes respiratoires?','q6'),
+         verifier('Est ce que vous etes fatigue?','q4'),
+         verifier('Votre odorat est il perdu?','q9'),
+         verifier('Avez vous perdu le gout?','q1'),
+         verifier('Est ce que vous avez une congestion nasale?','q10'),
+         verifier('Avez vous du mal a la gorge?','q1'),
+         verifier('Avez vous eu la diarrhee?','q5'),
+         verifier('Vous souffrez de maux de tete?','q3'),
+         verifier('Vous souffrez de douleurs musculaires','q7').
                 
 
-covid :- verifier(fievre,'q1'),
-         verifier(toux,'q2'),
-         verifier('des difficultés respiratoires','q6'),
-         verifier('la fatigue','q4'),
-         verifier('perdu d\'odorat','q9'),
-         verifier('perdu du gout','q1').
+covid :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius?','q1'),
+         verifier('Est ce que vous toussez?','q2'),
+         verifier('Avez vous des difficultes respiratoires?','q6'),
+         verifier('Est ce que vous etes fatigue?','q4'),
+         verifier('Votre odorat est il perdu?','q9'),
+         verifier('Avez vous perdu le gout?','q1').
 
-covid :- verifier('perdu d\'odorat' , 'q9'),
-         verifier('perdu du gout','q1').
+covid :- verifier('Votre odorat est il perdu?' , 'q9'),
+         verifier('Avez vous perdu le gout?','q1').
 
-grippe :- verifier(fievre,'q1'),
-          verifier(toux , 'q2'),
-          verifier('congestion nasale' , 'q10'),
-          verifier('mal de gorge' , 'q1'),
-          verifier('des difficultés respiratoires' , 'q6'),
-          verifier('maux de tête' , 'q3'),
-          verifier('douleurs musculaires', 'q7').
+grippe :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius?','q1'),
+          verifier('Est ce que vous toussez?' , 'q2'),
+          verifier('Est ce que vous avez une congestion nasale?' , 'q10'),
+          verifier('Avez vous du mal a la gorge?' , 'q1'),
+          verifier('Avez vous des difficultes respiratoires?' , 'q6'),
+          verifier('Vous souffrez de maux de tete?' , 'q3'),
+          verifier('Vous souffrez de douleurs musculaires', 'q7').
 
-angine :- verifier(fievre , 'q1'),
-          verifier('mal de gorge' , 'q1'),
-          verifier('maux de tête' , 'q3'),
-          verifier('amygdales rouges' , 'q8').
+angine :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius?' , 'q1'),
+          verifier('Avez vous du mal a la gorge?' , 'q1'),
+          verifier('Vous souffrez de maux de tete?' , 'q3'),
+          verifier('Vous avez des amygdales rouges?' , 'q8').
 
-rhume :- verifier(fievre , 'q1'),
-         verifier(toux , 'q2'),
-         verifier('congestion nasale', 'q10'),
-         verifier('mal de gorge' , 'q1').
+rhume :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius?' , 'q1'),
+         verifier('Est ce que vous toussez?' , 'q2'),
+         verifier('Est ce que vous avez une congestion nasale?', 'q10'),
+         verifier('Avez vous du mal a la gorge?' , 'q1').

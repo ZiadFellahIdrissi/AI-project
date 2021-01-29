@@ -2,6 +2,7 @@
 :- use_module(library(pce)).
 :- pce_image_directory('./images').
 :- use_module(library(pce_style_item)).
+:- encoding(iso_latin_1).
 :- dynamic color/2.
 
 resource(inter, image, image('acceuil.jpg')).
@@ -48,6 +49,7 @@ imagen_quest(Fenetre, Imagen) :-new(Figure, figure),
                               send(Fenetre, display,Figure,point(500,60)).
 
 
+
 boutons:-free(@maladie),
         free(@quitter),
         free(@conseil),
@@ -73,7 +75,7 @@ demander(Symptome,Img):-new(Di,dialog('Questions:')),
                     new(La,label(prob,Symptome)),
                     imagen_quest(Di,Img),
                     new(B1,button('OUI',and(message(Di,return,oui)))),
-                    new(B2,button('NO',and(message(Di,return,non)))),
+                    new(B2,button('NON',and(message(Di,return,non)))),
                     send(Di, gap, size(25,25)),
                     send(Di,append(L2)),
                     send(Di,append(La)),
