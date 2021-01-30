@@ -1,6 +1,6 @@
 # CoMed
 L’objectif principal de ce projet est de développer un application desktop qui permet de faire une consultation médicale à l'utilisateur.
-<span class='text-red'>CoMeD</span> va vous aider à détecter votre maladie suivant vos symptômes.
+![#f03c15](CoMeD) va vous aider à détecter votre maladie suivant vos symptômes.
 
 
 Pour executer ce programme vous devez:
