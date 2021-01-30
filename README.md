@@ -1,12 +1,14 @@
-# coMed
-L’objectif principal de ce projet est de développer une application desktop qui permet de faire une consultation médicale d’un utilisateur. Pour aboutir à cette fin, nous allons tout d’abord effectuer une étude conceptuelle de l’application. Cette dernière nous permettra, en effet, d’entamer facilement à la réalisation de l’application en organisant les idées et en structurant le processus de codage informatique suivant des diagrammes. 
+# CoMed
+L’objectif principal de ce projet est de développer un application desktop qui permet de faire une consultation médicale à l'utilisateur.
 
-In order to run this program you will need:
 
-Prolog 5.10.4 32-bit (LGPL)
+Pour executer ce programme vous devez:
+- Installer Prolog.
+- Windows: Ajouter le repertoire bin de Prolog (\pl\bin) aux variables d'environement dans PATH.
+- Executer le programme via la ligne de commande
+```bash
+  swipl -s 'chemin_du_fichier_pl' # avec GUI
+  swipl -s 'chemin_du_fichier_pl' -g 'comed' # sans GUI
+```
 
-Install Prolog.
-
-On Windows: Add Prolog's bin directory (\pl\bin) to your PATH.
-
-Run the application.
+Ou bien installer SWI-Prolog et executer le programme via `consult` dans la barre de menu.
