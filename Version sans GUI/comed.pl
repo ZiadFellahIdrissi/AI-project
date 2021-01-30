@@ -6,6 +6,7 @@ hypothese('la angine') :- angine, !.
 hypothese('le rhume') :- rhume, !.
 hypothese(inconnue) :- annuler.
 
+
 covid :- fievre,
          toux,
          difficultes_respiratoires,
@@ -74,10 +75,10 @@ rhume :- fievre,
 %%
 % Les questions des symptômes à verifier par l utilisateur.
 
-fievre                    :- verifier('Est ce que vous avez une temperature superieure a 38 degre celsius? ').
+fievre                    :- verifier('Est ce que vous avez une temperature superieure à 38°C ?').
 toux                      :- verifier('Est ce que vous toussez? ').
 difficultes_respiratoires :- verifier('Avez vous des difficultes respiratoires? ').
-fatigue                   :- verifier('Est ce que vous etes fatigue? ').
+fatigue                   :- verifier('Est ce que vous êtes fatigue? ').
 perte_odorat              :- verifier('Votre odorat est il perdu? ').
 perte_gout                :- verifier('Avez vous perdu le gout? ').
 congestion_nasale         :- verifier('Est ce que vous avez une congestion nasale? ').
