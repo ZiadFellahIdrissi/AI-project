@@ -6,7 +6,6 @@ hypothese('la angine') :- angine, !.
 hypothese('le rhume') :- rhume, !.
 hypothese(inconnue) :- annuler.
 
-
 covid :- fievre,
          toux,
          difficultes_respiratoires,
@@ -36,7 +35,7 @@ covid :- fievre,
          perte_gout,
 		 writeln("Il est probable que vous avez la COVID-19."),
 		 writeln("On vous conseille de vous vous confinez chez vous pendant 14 jours."),
-		 writeln("vous vous lavez les mains régulièrement pour ne pas transmettre le virus aux autres.").
+		 writeln("vous vous lavez les mains régulierement pour ne pas transmettre le virus aux autres.").
 
 grippe :- fievre,
           toux,
