@@ -6,6 +6,7 @@ hypothese('la angine') :- angine, !.
 hypothese('le rhume') :- rhume, !.
 hypothese(inconnue) :- annuler.
 
+
 covid :- fievre,
          toux,
          difficultes_respiratoires,
