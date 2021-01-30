@@ -10,4 +10,10 @@ Pour executer ce programme vous devez:
   swipl -s 'chemin_du_fichier_pl' -g 'comed' # sans GUI
 ```
 
-Ou bien installer [SWI-Prolog](https://www.swi-prolog.org/download/stable) et executer le programme via `consult` dans la barre de menu.
+Ou bien
+- Installer [SWI-Prolog](https://www.swi-prolog.org/download/stable).
+- Executer le programme.
+- Ouvrir le fichier .pl via `consult` dans la barre de menu.
+- Pour le version sans GUI, il faut taper ```prolog
+comed.
+```
