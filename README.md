@@ -1,4 +1,4 @@
-# [CoMeD](https://github.com/ZiadFellahIdrissi/AI-project)
+# [CoMeD: Consultation médicale](https://github.com/ZiadFellahIdrissi/AI-project)
 L’objectif principal de ce projet est de développer un application desktop qui permet de faire une consultation médicale à l'utilisateur.
 ##
 Pour executer ce programme vous devez:
