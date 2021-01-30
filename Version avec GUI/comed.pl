@@ -103,7 +103,7 @@ creer_interface :- new(@interface,dialog('CoMed: Consultation medicale')),
                     send(@interface, append(BoutonQuitter)),
                     send(@interface, open_centered).
 
-:-creer_interface.
+:-creer_interface. 
 
 effacer:- send(@maladie, selection('')).
 
