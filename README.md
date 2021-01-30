@@ -3,7 +3,7 @@ L’objectif principal de ce projet est de développer un application desktop qu
 ##
 Pour executer ce programme vous devez:
 - Installer Prolog.
-- Windows: Ajouter le repertoire bin de Prolog (\pl\bin) aux variables d'environement dans PATH.
+- Ajouter le repertoire bin de Prolog (\pl\bin) aux variables d'environement dans PATH.
 - Executer le programme via la ligne de commande
 ```bash
   swipl -s 'chemin_du_fichier_pl' # avec GUI
