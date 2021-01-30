@@ -14,6 +14,7 @@ Ou bien
 - Installer [SWI-Prolog](https://www.swi-prolog.org/download/stable).
 - Executer le programme.
 - Ouvrir le fichier .pl via `consult` dans la barre de menu.
-- Pour le version sans GUI, il faut taper ```prolog
+- Pour le version sans GUI, il faut taper
+```prolog
 comed.
 ```
