@@ -6,8 +6,8 @@ Pour executer ce programme vous devez:
 - Ajouter le repertoire bin de Prolog (\pl\bin) aux variables d'environement dans PATH.
 - Executer le programme via la ligne de commande
 ```bash
-  swipl -s 'chemin_du_fichier_pl' # avec GUI
-  swipl -s 'chemin_du_fichier_pl' -g 'comed' # sans GUI
+  swipl -f 'chemin_du_fichier_pl' # avec GUI
+  swipl -f 'chemin_du_fichier_pl' -g 'comed' # sans GUI
 ```
 
 Ou bien
