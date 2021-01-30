@@ -1,6 +1,6 @@
 # CoMed
 L’objectif principal de ce projet est de développer un application desktop qui permet de faire une consultation médicale à l'utilisateur.
-CoMeD[#ff0000](https://github.com/ZiadFellahIdrissi/AI-project) va vous aider à détecter votre maladie suivant vos symptômes.
+![#ff0000 CoMeD](https://github.com/ZiadFellahIdrissi/AI-project) va vous aider à détecter votre maladie suivant vos symptômes.
 
 
 Pour executer ce programme vous devez:
