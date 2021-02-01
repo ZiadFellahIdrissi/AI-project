@@ -1,5 +1,5 @@
 # [CoMeD: Consultation médicale](https://github.com/ZiadFellahIdrissi/AI-project)
-L’objectif principal de ce projet est de développer un application desktop qui permet de faire une consultation médicale à l'utilisateur.
+L’objectif principal de ce projet est de développer une application desktop de système expert qui fait une consultation médicale à l'utilisateur.
 ##
 Pour executer ce programme vous devez:
 - Installer Prolog.
