@@ -1,4 +1,5 @@
-comed :- hypothese(Maladie), annuler.
+comed :- hypothese(Maladie),
+         annuler.
 
 hypothese('le coronavirus') :- covid, !.
 hypothese('la grippe')      :- grippe, !.
@@ -44,11 +45,11 @@ grippe :- fievre,
           difficultes_respiratoires,
           maux_tete,
           douleurs_musculaires,
-	 writeln("Vous avez la grippe."),
-	 writeln("On vous conseille de vous vous reposez,"),
-	 writeln("bien buvez de l'eau,"),
-	 writeln("prenez un medicament contre la fievre (nous vous recommandons le Paracetamol),"),
-	 writeln("vous vous lavez les mains regulierement et ne prenez pas d'antibiotiques.").
+	  writeln("Vous avez la grippe."),
+	  writeln("On vous conseille de vous vous reposez,"),
+	  writeln("bien buvez de l'eau,"),
+	  writeln("prenez un medicament contre la fievre (nous vous recommandons le Paracetamol),"),
+	  writeln("vous vous lavez les mains regulierement et ne prenez pas d'antibiotiques.").
 
 angine :- fievre,
           mal_gorge,
