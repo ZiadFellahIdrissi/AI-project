@@ -2,10 +2,10 @@
 % Les maladies.
  
 hypothese('La COVID-19') :- covid, !.
-hypothese('La grippe') :- grippe, !.
-hypothese('La angine') :- angine, !.
-hypothese('Le rhume') :- rhume, !.
-hypothese(inconnue) :- annuler.
+hypothese('La grippe')   :- grippe, !.
+hypothese('La angine')   :- angine, !.
+hypothese('Le rhume')    :- rhume, !.
+hypothese(inconnue)      :- annuler.
 
 %%%%%%%%%%
 % Les symptômes.
