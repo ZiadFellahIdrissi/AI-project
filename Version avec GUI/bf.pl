@@ -12,13 +12,13 @@ hypothese(inconnue) :- annuler.
 
 covid :- fievre,
          toux,
+         diarrhee,
          difficultes_respiratoires,
          fatigue,
          perte_odorat,
          perte_gout,
          congestion_nasale,
          mal_gorge,
-         diarrhee,
          maux_tete,
          douleurs_musculaires.
 
@@ -45,9 +45,16 @@ angine :- fievre,
           mal_gorge,
           maux_tete,
           amygdales_rouge.
+          
+
+angine :- mal_gorge,
+          maux_tete,
+          amygdales_rouge.
 
 rhume :- fievre,
          congestion_nasale,
+         mal_gorge.
+rhume :- congestion_nasale,
          mal_gorge.
 
 %%
