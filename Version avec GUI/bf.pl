@@ -54,6 +54,7 @@ angine :- mal_gorge,
 rhume :- fievre,
          congestion_nasale,
          mal_gorge.
+         
 rhume :- congestion_nasale,
          mal_gorge.
 
