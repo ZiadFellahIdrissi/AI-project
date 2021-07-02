@@ -25,26 +25,26 @@ resource(img9, image, image('symptomes/perte_odorat.jpg')).
 resource(img10, image, image('symptomes/perte_gout.jpg')).
 resource(img11, image, image('symptomes/congestion_nasale.jpg')).
 
-affiche_image(Affichage, Imagen) :- new(Figure, figure),
-                                    new(Bitmap, bitmap(resource(Imagen),@on)),
-                                    send(Bitmap, name, 1),
-                                    send(Figure, display, Bitmap),
-                                    send(Figure, status, 1),
-                                    send(Affichage, display,Figure,point(100,80)).
-
-nouveau_imagen(Fenetre, Imagen) :- new(Figure, figure),
-                                   new(Bitmap, bitmap(resource(Imagen),@on)),
+affiche_image(Affichage, Image) :- new(Figure, figure),
+                                   new(Bitmap, bitmap(resource(Image),@on)),
                                    send(Bitmap, name, 1),
                                    send(Figure, display, Bitmap),
                                    send(Figure, status, 1),
-                                   send(Fenetre, display,Figure,point(0,0)).
+                                   send(Affichage, display,Figure,point(100,80)).
 
-imagen_qst(Fenetre, Imagen) :- new(Figure, figure),
-                               new(Bitmap, bitmap(resource(Imagen),@on)),
-                               send(Bitmap, name, 1),
-                               send(Figure, display, Bitmap),
-                               send(Figure, status, 1),
-                               send(Fenetre, display,Figure,point(500,60)).
+nouveau_image(Fenetre, Image) :- new(Figure, figure),
+                                 new(Bitmap, bitmap(resource(Image),@on)),
+                                 send(Bitmap, name, 1),
+                                 send(Figure, display, Bitmap),
+                                 send(Figure, status, 1),
+                                 send(Fenetre, display,Figure,point(0,0)).
+
+imagen_qst(Fenetre, Image) :- new(Figure, figure),
+                              new(Bitmap, bitmap(resource(Image),@on)),
+                              send(Bitmap, name, 1),
+                              send(Figure, display, Bitmap),
+                              send(Figure, status, 1),
+                              send(Fenetre, display,Figure,point(500,60)).
 
 boutons :- free(@maladie),
            free(@quitter),
@@ -54,9 +54,9 @@ boutons :- free(@maladie),
            effacer,
            send(@debut, free),
            hypothese(Maladie),
-           nouveau_imagen(@main, loading),
+           nouveau_image(@main, loading),
            sleep(1.5),
-           nouveau_imagen(@main, out),
+           nouveau_image(@main, out),
            send(@main, display, @maladie, point(240,380)),
            send(@maladie, selection(Maladie)),
            new(@conseil, button('Conseils', message(@prolog, resultat, Maladie))),
@@ -83,13 +83,13 @@ demander(Symptome, Img) :- new(Di,dialog('Questions:')),
                            free(Di).                 
 
 resultat(Msg) :- new(@conseil_g, dialog('Conseils pour votre maladie')),
-                 nouveau_imagen(@conseil_g, Msg),
+                 nouveau_image(@conseil_g, Msg),
                  send(@conseil_g, open_centered).
 
 interface_principal :- new(@main,dialog('CoMed: Consultation medicale')),
                        new(@quitter, button('QUITTER', and(message(@main,destroy), message(@main,free)))),
                        new(@debut, button('COMMENCER LE TEST', message(@prolog, boutons))),
-                       nouveau_imagen(@main, img_principal),
+                       nouveau_image(@main, img_principal),
                        send(@main, append(@debut)),
                        send(@main, append(@quitter)),
                        send(@main, open_centered).
