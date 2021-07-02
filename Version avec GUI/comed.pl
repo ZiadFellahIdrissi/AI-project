@@ -25,7 +25,7 @@ resource(img9, image, image('symptomes/perte_odorat.jpg')).
 resource(img10, image, image('symptomes/perte_gout.jpg')).
 resource(img11, image, image('symptomes/congestion_nasale.jpg')).
 
-affiche-image(Affichage, Imagen) :- new(Figure, figure),
+affiche_image(Affichage, Imagen) :- new(Figure, figure),
                                     new(Bitmap, bitmap(resource(Imagen),@on)),
                                     send(Bitmap, name, 1),
                                     send(Figure, display, Bitmap),
@@ -95,7 +95,7 @@ interface_principal :- new(@main,dialog('CoMed: Consultation medicale')),
                        send(@main, open_centered).
 
 creer_interface :- new(@interface,dialog('CoMed: Consultation medicale')),
-                   affiche-image(@interface, inter),
+                   affiche_image(@interface, inter),
                    new(BoutonComencer, button('COMMENCER', and(message(@prolog, interface_principal) ,
                    and(message(@interface, destroy), message(@interface, free)) ))),
                    new(BoutonQuitter, button('QUITTER', and(message(@interface, destroy), message(@interface, free)))),
