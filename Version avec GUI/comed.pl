@@ -25,26 +25,26 @@ resource(img9, image, image('symptomes/perte_odorat.jpg')).
 resource(img10, image, image('symptomes/perte_gout.jpg')).
 resource(img11, image, image('symptomes/congestion_nasale.jpg')).
 
-affich-image(Affichage, Imagen) :- new(Figure, figure),
+affiche-image(Affichage, Imagen) :- new(Figure, figure),
+                                    new(Bitmap, bitmap(resource(Imagen),@on)),
+                                    send(Bitmap, name, 1),
+                                    send(Figure, display, Bitmap),
+                                    send(Figure, status, 1),
+                                    send(Affichage, display,Figure,point(100,80)).
+
+nouveau_imagen(Fenetre, Imagen) :- new(Figure, figure),
                                    new(Bitmap, bitmap(resource(Imagen),@on)),
                                    send(Bitmap, name, 1),
                                    send(Figure, display, Bitmap),
                                    send(Figure, status, 1),
-                                   send(Affichage, display,Figure,point(100,80)).
+                                   send(Fenetre, display,Figure,point(0,0)).
 
-nouv_imagen(Fenetre, Imagen) :- new(Figure, figure),
-                                new(Bitmap, bitmap(resource(Imagen),@on)),
-                                send(Bitmap, name, 1),
-                                send(Figure, display, Bitmap),
-                                send(Figure, status, 1),
-                                send(Fenetre, display,Figure,point(0,0)).
-
-imagen_quest(Fenetre, Imagen) :- new(Figure, figure),
-                                 new(Bitmap, bitmap(resource(Imagen),@on)),
-                                 send(Bitmap, name, 1),
-                                 send(Figure, display, Bitmap),
-                                 send(Figure, status, 1),
-                                 send(Fenetre, display,Figure,point(500,60)).
+imagen_qst(Fenetre, Imagen) :- new(Figure, figure),
+                               new(Bitmap, bitmap(resource(Imagen),@on)),
+                               send(Bitmap, name, 1),
+                               send(Figure, display, Bitmap),
+                               send(Figure, status, 1),
+                               send(Fenetre, display,Figure,point(500,60)).
 
 boutons :- free(@maladie),
            free(@quitter),
@@ -54,9 +54,9 @@ boutons :- free(@maladie),
            effacer,
            send(@debut, free),
            hypothese(Maladie),
-           nouv_imagen(@main, loading),
+           nouveau_imagen(@main, loading),
            sleep(1.5),
-           nouv_imagen(@main, out),
+           nouveau_imagen(@main, out),
            send(@main, display, @maladie, point(240,380)),
            send(@maladie, selection(Maladie)),
            new(@conseil, button('Conseils', message(@prolog, resultat, Maladie))),
@@ -69,7 +69,7 @@ boutons :- free(@maladie),
 demander(Symptome, Img) :- new(Di,dialog('Questions:')),
                            new(L2, label(texto, 'Repondez aux Questions')),
                            new(La, label(prob, Symptome)),
-                           imagen_quest(Di, Img),
+                           imagen_qst(Di, Img),
                            new(B1,button('OUI', and(message(Di, return, oui)))),
                            new(B2,button('NON', and(message(Di, return, non)))),
                            send(Di, gap, size(25, 25)),
@@ -83,19 +83,19 @@ demander(Symptome, Img) :- new(Di,dialog('Questions:')),
                            free(Di).                 
 
 resultat(Msg) :- new(@conseil_g, dialog('Conseils pour votre maladie')),
-                 nouv_imagen(@conseil_g, Msg),
+                 nouveau_imagen(@conseil_g, Msg),
                  send(@conseil_g, open_centered).
 
 interface_principal :- new(@main,dialog('CoMed: Consultation medicale')),
                        new(@quitter, button('QUITTER', and(message(@main,destroy), message(@main,free)))),
                        new(@debut, button('COMMENCER LE TEST', message(@prolog, boutons))),
-                       nouv_imagen(@main, img_principal),
+                       nouveau_imagen(@main, img_principal),
                        send(@main, append(@debut)),
                        send(@main, append(@quitter)),
                        send(@main, open_centered).
 
 creer_interface :- new(@interface,dialog('CoMed: Consultation medicale')),
-                   affich-image(@interface, inter),
+                   affiche-image(@interface, inter),
                    new(BoutonComencer, button('COMMENCER', and(message(@prolog, interface_principal) ,
                    and(message(@interface, destroy), message(@interface, free)) ))),
                    new(BoutonQuitter, button('QUITTER', and(message(@interface, destroy), message(@interface, free)))),
@@ -103,7 +103,7 @@ creer_interface :- new(@interface,dialog('CoMed: Consultation medicale')),
                    send(@interface, append(BoutonQuitter)),
                    send(@interface, open_centered).
 
-:-creer_interface. 
+:- creer_interface. 
 
 effacer :- send(@maladie, selection('')).
 
